@@ -2,7 +2,6 @@ import sys
 from pathlib import Path
 
 import questionary
-from rich import print as rprint
 from rich.console import Console
 from rich.panel import Panel
 
@@ -142,11 +141,22 @@ def main():
 
         console.print(f"[green]Selected {len(files)} image(s)[/green]")
 
-        mode, output_dir = ask_output_mode()
-
         features = get_features()
+        any_needs_output = any(
+            info.get("needs_output", True)
+            for name, info in features.items()
+            if name in selected
+        )
+
+        if any_needs_output:
+            mode, output_dir = ask_output_mode()
+        else:
+            mode, output_dir = "overwrite", None
+
         for feature_name in selected:
             info = features[feature_name]
+            ask_args = info.get("ask_args")
+            feature_args = ask_args(files) if ask_args else {}
             console.print(f"\n[bold]→ {info['name']}[/bold]")
             process_files(
                 files=files,
@@ -154,6 +164,7 @@ def main():
                 feature_name=info["name"],
                 output_mode=mode,
                 output_dir=output_dir,
+                args=feature_args,
             )
 
         console.print("\n[bold green]✓ All done![/bold green]")

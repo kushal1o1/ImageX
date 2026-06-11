@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Callable
+from typing import Any, Callable
 
 from rich.progress import (
     BarColumn,
@@ -13,11 +13,15 @@ from imagex.utils.file_ops import backup_file, get_output_path
 
 def process_files(
     files: list[Path],
-    process_func: Callable[[Path, Path], bool],
+    process_func: Callable[[Path, Path, dict[str, Any]], bool],
     feature_name: str,
     output_mode: str,
     output_dir: Path | None = None,
+    args: dict[str, Any] | None = None,
 ):
+    if args is None:
+        args = {}
+
     with Progress(
         TextColumn(f"[bold blue]{feature_name}[/bold blue]"),
         BarColumn(),
@@ -35,7 +39,7 @@ def process_files(
                     backup_file(file)
 
                 output_path.parent.mkdir(parents=True, exist_ok=True)
-                process_func(file, output_path)
+                process_func(file, output_path, args)
 
             except Exception as e:
                 progress.console.print(
