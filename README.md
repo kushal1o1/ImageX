@@ -10,7 +10,7 @@
 Image processing CLI tool — right in your terminal.
 
 ```bash
-pip install .
+pip install imagex
 imagex
 ```
 
@@ -33,10 +33,10 @@ Full details in [OPERATIONS.md](OPERATIONS.md).
 ## Install
 
 ```bash
-# From the repo directory
-pip install .
+# From PyPI (recommended)
+pip install imagex
 
-# Dev mode (changes take effect immediately)
+# Dev mode from repo (changes take effect immediately)
 pip install -e .
 ```
 
