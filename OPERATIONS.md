@@ -140,6 +140,21 @@ Rotates images 90° Left, 90° Right, or 180° (Upside Down). No quality loss �
 
 ---
 
+## Flip
+
+Mirrors images across an axis. Unlike Rotate, this produces a *reflection* — a flipped image cannot be reproduced by any rotation.
+
+**Directions:**
+
+| Direction | What it does |
+|---|---|
+| **Horizontal** | Mirror left ↔ right (e.g. un-mirror a selfie) |
+| **Vertical** | Mirror top ↔ bottom (reflection, **not** the same as a 180° rotation) |
+
+No quality loss — uses Pillow's built-in transpose.
+
+---
+
 ## Planned Features
 
 See [CONTRIBUTION.md](CONTRIBUTION.md) for how to add new features.

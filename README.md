@@ -21,6 +21,7 @@ Navigate to any folder with images and run `imagex`.
 | Feature | Description |
 |---|---|
 | Rotate | Rotate 90° Left, 90° Right, or 180° |
+| Flip | Mirror horizontally or vertically |
 | Remove Metadata | Strip EXIF/XMP/IPTC (incl. AI generation markers) |
 | Convert Format | JPG ↔ PNG ↔ WEBP ↔ TIFF ↔ BMP ↔ GIF ↔ HEIC |
 | Compress / Optimize | Reduce file size with quality slider |
