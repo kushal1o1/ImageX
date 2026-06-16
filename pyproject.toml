@@ -4,29 +4,53 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "imagex"
-version = "0.2.0"
-description = "Image processing CLI tool - right in your terminal"
+version = "0.2.1"
+description = "All-in-one image processing CLI — resize, convert, watermark, compress, and more"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = {file = "LICENSE"}
 authors = [
-    {name = "kushal1o1"},
+    {name = "kushal1o1", email = "kushal1o1@users.noreply.github.com"},
+]
+keywords = [
+    "image-processing",
+    "cli",
+    "pillow",
+    "resize",
+    "convert",
+    "watermark",
+    "compress",
+    "metadata",
+    "batch",
+    "rename",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Utilities",
 ]
 dependencies = [
     "rich>=13.0",
     "questionary>=2.0",
     "Pillow>=10.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/kushal1o1/ImageX"
+Repository = "https://github.com/kushal1o1/ImageX"
+Documentation = "https://github.com/kushal1o1/ImageX/blob/main/OPERATIONS.md"
+Changelog = "https://github.com/kushal1o1/ImageX/releases"
+Issues = "https://github.com/kushal1o1/ImageX/issues"
 
 [project.optional-dependencies]
 heif = [

@@ -29,7 +29,7 @@ Navigate to any folder with images and run `imagex`.
 | Add Noise | Gaussian or salt & pepper (bypass AI detection) |
 | Watermark | Add text/image or remove existing |
 
-Full details in [OPERATIONS.md](OPERATIONS.md).
+Full details in [OPERATIONS.md](https://github.com/kushal1o1/ImageX/blob/main/OPERATIONS.md).
 
 ## Install
 
@@ -45,7 +45,7 @@ Then run `imagex` from any folder.
 
 ## Adding Features
 
-See [CONTRIBUTION.md](CONTRIBUTION.md) for the contribution guide.
+See [CONTRIBUTION.md](https://github.com/kushal1o1/ImageX/blob/main/CONTRIBUTION.md) for the contribution guide.
 
 ## License
 
