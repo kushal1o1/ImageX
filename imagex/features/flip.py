@@ -29,5 +29,10 @@ def run(file: Path, output_path: Path, args: Optional[dict[str, Any]] = None) ->
 
     img = Image.open(file)
     flipped = img.transpose(args["method"])
-    flipped.save(str(output_path), format=img.format or "JPEG")
+    kw = {"format": img.format or "JPEG"}
+    if exif := img.info.get("exif"):
+        kw["exif"] = exif
+    if icc := img.info.get("icc_profile"):
+        kw["icc_profile"] = icc
+    flipped.save(str(output_path), **kw)
     return True
